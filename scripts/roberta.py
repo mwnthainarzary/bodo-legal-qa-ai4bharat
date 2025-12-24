@@ -60,10 +60,12 @@ def preprocess_qa(examples):
     tokenized = tokenizer(
         examples["question"],
         examples["context"],
-        truncation="only_second",
+        truncation=True,
         padding="max_length",
         max_length=384,
-        return_offsets_mapping=True
+        return_offsets_mapping=True,
+        # return_overflowing_tokens=True,
+        return_tensors="pt"
     )
 
     start_positions = []

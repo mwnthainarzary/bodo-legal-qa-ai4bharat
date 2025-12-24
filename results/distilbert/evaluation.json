@@ -1,0 +1,13 @@
+{
+  "start_accuracy": 0.13475533249686325,
+  "end_accuracy": 0.14353826850690088,
+  "start_f1": 0.04659992116402843,
+  "end_f1": 0.04289651963339065,
+  "exact_match": 0.0,
+  "bleu_score": 0.003389409292883707,
+  "bert_score_precision": 0.0676775872707367,
+  "bert_score_recall": 0.06515362113714218,
+  "bert_score_f1": 0.06605701148509979,
+  "cosine_similarity": 0.16003867983818054,
+  "num_samples": 3985
+}

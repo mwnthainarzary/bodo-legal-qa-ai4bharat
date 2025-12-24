@@ -62,10 +62,12 @@ def preprocess_qa(examples):
     tokenized = tokenizer(
         examples["question"],
         examples["context"],
-        truncation="only_second",
+        truncation=True,
         padding="max_length",
         max_length=384,
-        return_offsets_mapping=True
+        return_offsets_mapping=True,
+        # return_overflowing_tokens=True,
+        return_tensors="pt"
     )
 
     start_positions = []
@@ -96,6 +98,7 @@ def preprocess_qa(examples):
     tokenized.pop("offset_mapping")
     return tokenized
 
+# generate below datasets for Bodo language
 train_dataset = train_dataset.map(preprocess_qa, batched=True)
 eval_dataset  = eval_dataset.map(preprocess_qa, batched=True)
 
